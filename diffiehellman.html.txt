@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+    <html>
+	<head>
+	   <title>Diffie-Hellman Key Exchange</title>
+	</head>
+
+	<script>
+	var prime = 7;
+var keyGen = Math.floor(Math.random() * 100) + 1;
+var privateKeyA = Math.floor(Math.random() * 100) + 1;
+var privateKeyB = Math.floor(Math.random() * 100) + 1;
+var messageA = 0;
+var messageB = 0;
+
+function genPublic(privateKey){
+	let publicKey = (keyGen ^ privateKey) % prime;
+    return publicKey;
+}//end generate public key
+
+function getMessage(privateKey, exchangedKey){
+	var message = (exchangedKey^privateKey) % prime;
+    return message;
+}//end get secret code
+
+function exchange(){
+  //generate public keys
+  var publicKeyA = genPublic(privateKeyA);
+  var publicKeyB = genPublic(privateKeyB);
+  //now A and B trade these new public keys
+  //note A and B have exchanged keys, so pass the 	other as parameter
+  messageA = getMessage(privateKeyA, publicKeyB);
+  messageB = getMessage(privateKeyB, publicKeyA);
+  document.getElementById("messageA").innerHTML = messageA;
+  document.getElementById("messageB").innerHTML = messageB;
+  document.getElementById("publicKeyA").innerHTML = publicKeyA;
+  document.getElementById("publicKeyB").innerHTML = publicKeyB;
+  
+}//end exchange, computing everything
+
+</script>
+
+<body>
+
+<h1>Diffie-Hellman Key Exchange</h1>
+<p> User A's public key: </p>
+<p id = "publicKeyA"> </p>
+<p> User B's public key:</p>
+<p id = "publicKeyB"> </p>
+<p> Message A decrypted: </p>
+<p id = "messageA"> </p>
+<p> Message B decrypted: </p>
+<p id = "messageB"> </p>
+<button onclick="exchange()"> exchange </button>
+</body>
+</html>
