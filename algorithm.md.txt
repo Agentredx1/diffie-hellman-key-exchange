@@ -1,0 +1,13 @@
+Diffie Hellman Key Exchange
+Simon Greenaway 5/5/2023
+
+Private exchange between two people
+Steps:
+
+1. generate random prime number = P
+2. generate random number, to generate public key = G
+3. user A randomly generates a PRIVATE key = private
+4. so does user B 
+5. both create public keys = (G^private) mod P
+6. users exchange their public keys.
+7. secret message = (exchanged public key^private) mod P
