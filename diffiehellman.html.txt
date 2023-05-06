@@ -1,16 +1,22 @@
 <!DOCTYPE html>
-    <html>
-	<head>
-	   <title>Diffie-Hellman Key Exchange</title>
-	</head>
+<html>
+<head>
+<title>Diffie-Hellman Key Exchange</title>
+</head>
 
-	<script>
-	var prime = 7;
-var keyGen = Math.floor(Math.random() * 100) + 1;
-var privateKeyA = Math.floor(Math.random() * 100) + 1;
-var privateKeyB = Math.floor(Math.random() * 100) + 1;
+<script>
+//const primeNumbers = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31];
+//const primitiveRoots = [1, 2, 3, 5, 7, 11, 7, 13, 7, 18, 17];
+
+//var randPrime = Math.floor(Math.random()*primeNumbers.length);
+var prime =  7;//primeNumbers[randPrime];
+var keyGen = 5;//primitiveRoots[randPrime];
+var privateKeyA = Math.floor(Math.random() * 10) + 1;
+var privateKeyB = Math.floor(Math.random() * 10) + 1;
+
 var messageA = 0;
 var messageB = 0;
+
 
 function genPublic(privateKey){
 	let publicKey = (keyGen ^ privateKey) % prime;
@@ -23,6 +29,8 @@ function getMessage(privateKey, exchangedKey){
 }//end get secret code
 
 function exchange(){
+	privateKeyA = Math.floor(Math.random() * 10) + 1;
+	privateKeyB = Math.floor(Math.random() * 10) + 1;
   //generate public keys
   var publicKeyA = genPublic(privateKeyA);
   var publicKeyB = genPublic(privateKeyB);
@@ -30,10 +38,12 @@ function exchange(){
   //note A and B have exchanged keys, so pass the 	other as parameter
   messageA = getMessage(privateKeyA, publicKeyB);
   messageB = getMessage(privateKeyB, publicKeyA);
+  
+  
   document.getElementById("messageA").innerHTML = messageA;
   document.getElementById("messageB").innerHTML = messageB;
-  document.getElementById("publicKeyA").innerHTML = publicKeyA;
-  document.getElementById("publicKeyB").innerHTML = publicKeyB;
+  document.getElementById("userA").innerHTML = "public key: " + publicKeyA + " Private key: " + privateKeyA;
+  document.getElementById("userB").innerHTML = "public key: " + publicKeyB + " private key: " + privateKeyB;
   
 }//end exchange, computing everything
 
@@ -42,14 +52,14 @@ function exchange(){
 <body>
 
 <h1>Diffie-Hellman Key Exchange</h1>
-<p> User A's public key: </p>
-<p id = "publicKeyA"> </p>
-<p> User B's public key:</p>
-<p id = "publicKeyB"> </p>
+<p> User A</p>
+<p id = "userA">public key: __ private key: __</p>
+<p> User B</p>
+<p id = "userB">public key: __ private key: __</p>
 <p> Message A decrypted: </p>
-<p id = "messageA"> </p>
+<p id = "messageA"> _</p>
 <p> Message B decrypted: </p>
-<p id = "messageB"> </p>
+<p id = "messageB"> _</p>
 <button onclick="exchange()"> exchange </button>
 </body>
 </html>
