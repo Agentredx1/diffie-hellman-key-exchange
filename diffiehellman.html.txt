@@ -9,10 +9,10 @@
 //const primitiveRoots = [1, 2, 3, 5, 7, 11, 7, 13, 7, 18, 17];
 
 //var randPrime = Math.floor(Math.random()*primeNumbers.length);
-var prime =  7;//primeNumbers[randPrime];
-var keyGen = 5;//primitiveRoots[randPrime];
-var privateKeyA = Math.floor(Math.random() * 10) + 1;
-var privateKeyB = Math.floor(Math.random() * 10) + 1;
+var prime =  31;//primeNumbers[randPrime];
+var keyGen = 3;//primitiveRoots[randPrime];
+var privateKeyA = Math.floor(Math.random() * 100) + 1;
+var privateKeyB = Math.floor(Math.random() * 100) + 1;
 
 var messageA = 0;
 var messageB = 0;
