@@ -2,6 +2,9 @@
 <html>
 <head>
 <title>Diffie-Hellman Key Exchange</title>
+<style>
+  body {text-align: center;}
+</style>
 </head>
 
 <script>
@@ -35,15 +38,15 @@ function exchange(){
   var publicKeyA = genPublic(privateKeyA);
   var publicKeyB = genPublic(privateKeyB);
   //now A and B trade these new public keys
-  //note A and B have exchanged keys, so pass the 	other as parameter
+  //note A and B have exchanged keys, so pass the other as parameter
   messageA = getMessage(privateKeyA, publicKeyB);
   messageB = getMessage(privateKeyB, publicKeyA);
   
   
   document.getElementById("messageA").innerHTML = messageA;
   document.getElementById("messageB").innerHTML = messageB;
-  document.getElementById("userA").innerHTML = "public key: " + publicKeyA + " Private key: " + privateKeyA;
-  document.getElementById("userB").innerHTML = "public key: " + publicKeyB + " private key: " + privateKeyB;
+  document.getElementById("userA").innerHTML = "public key: " + publicKeyA + "    " + "private key: " + privateKeyA;
+  document.getElementById("userB").innerHTML = "public key: " + publicKeyB + "    " + "private key: " + privateKeyB;
   
 }//end exchange, computing everything
 
