@@ -1,0 +1,83 @@
+/*
+Style sheet for diffie hellman key exchange page
+Created 3/18/2024
+Simon Greenaway
+*/
+body {
+    text-align: center;
+    background-color: aliceblue;
+}
+
+
+
+#example {
+    padding-bottom: 40px;
+    display: flex;
+    flex-flow:row;
+    justify-content: center; /*spent a lot of time looking for this one!*/
+    align-items: stretch;
+
+}
+
+#example > .user{
+    margin-left: 40px;
+    margin-right: 40px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: aquamarine;
+    border-style: double;
+    border-width: 20px;
+}
+
+#example > .user > p{
+    background-color: aquamarine;
+}
+
+#example > .user > .publicKey{
+    background-color: lightcoral;
+}
+
+#example > #publicspace{
+    background-color: lightcoral;
+}
+
+
+#example > #publicspace > p{
+    margin-top: 2px;
+    margin-bottom: 2px;
+    padding-left: 30px;
+    padding-right: 30px;
+    background-color: pink;
+}
+
+#example > #publicspace > .space{
+    background-color: lightcoral;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+#example > .user > .space{
+    background-color: mediumaquamarine;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+#exampleWork {
+    display: flex;
+    flex-flow:row;
+    justify-content: center; /*spent a lot of time looking for this one!*/
+    align-items: stretch;
+}
+
+#exampleWork > .userWork {
+    background-color: aquamarine;
+    margin:auto;
+}
+
+/*
+.info {}
+.user {}
+.privateKey {}
+.publicKey {}
+.result {}
+*/

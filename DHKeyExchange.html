@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css?">
+    <title>Diffie-Hellman Key Exchange</title>
+</head>
+<body>
+    <h1>Diffie-Hellman Key Exchange</h1>
+    <div class="info">
+        <p>The DH key exchange is built on using math to exchange private or encrypted data.</p>
+        <p>It was the first published work that uses the idea of private and public keys</p>
+    </div>
+    <div id="example">
+            <div id="userA" class="user">
+                <p class="space">User A</p>
+                <p class="privateKey">private key:</p>
+                <p class="publicKey">public key:</p>
+                <br>
+                <p class="result">result:</p>
+            </div>
+            <div id="publicspace">
+                <p class="space">Public Space:<p>                
+                <p id="prime">agreed prime: </p>
+                <p id="primitiveRoot">primitive root of prime: </p>
+                <p>publicKey = (prime^privateKey) mod primitive root </p>
+            </div>
+            <div id="userB" class="user">
+                <p class="space">User B</p>
+                <p class="privateKey">private key:</p>
+                <p class="publicKey">public key:</p>
+                <br>
+                <p class="result">result:</p>
+            </div>        
+    </div>
+    <div id="exampleWork">
+        <div class="userWork">Work
+            <p class="publicKeyWork">generate public key:</p>
+            <p class="decodeWork">decode with: </p>
+        </div>
+        <div>
+            <p id="check">0==0</p>
+            <button id="run">Run</button> 
+        </div>
+        <div class="userWork">Work
+            <p class="publicKeyWork">generate public key:</p>
+            <p class="decodeWork">decode with: </p>
+        </div>
+    </div>
+    <script src="diffieHellman.js?"></script>
+</body>

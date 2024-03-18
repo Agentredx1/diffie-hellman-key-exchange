@@ -20,14 +20,8 @@ var privateKeyB = Math.floor(Math.random() * 100) + 1;
 var messageA = 0;
 var messageB = 0;
 
-
-function genPublic(privateKey){
-	let publicKey = (keyGen ^ privateKey) % prime;
-    return publicKey;
-}//end generate public key
-
 function getMessage(privateKey, exchangedKey){
-	var message = (exchangedKey^privateKey) % prime;
+	var message = (exchangedKey^privateKey) % prime; 
     return message;
 }//end get secret code
 
@@ -45,8 +39,8 @@ function exchange(){
   
   document.getElementById("messageA").innerHTML = messageA;
   document.getElementById("messageB").innerHTML = messageB;
-  document.getElementById("userA").innerHTML = "public key: " + publicKeyA + "    " + "private key: " + privateKeyA;
-  document.getElementById("userB").innerHTML = "public key: " + publicKeyB + "    " + "private key: " + privateKeyB;
+  document.getElementById("userA").innerHTML = "public key: " + publicKeyA + "private key: " + privateKeyA;
+  document.getElementById("userB").innerHTML = "public key: " + publicKeyB + "private key: " + privateKeyB;
   
 }//end exchange, computing everything
 
